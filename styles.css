@@ -7,8 +7,8 @@
   --panel-2: #211F1C;
   --cream: #F2EDE4;
   --grey: #8B857C;
-  --rust: #8A1F11;
-  --rust-bright: #B4341E;
+  --rust: #C4460C;
+  --rust-bright: #FF6B1A;
   --line: rgba(242,237,228,0.12);
 
   --serif: 'Fraunces', Georgia, serif;
@@ -248,19 +248,25 @@ a{ color: inherit; text-decoration: none; }
   padding: 0 var(--edge);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-  background: var(--line);
+  gap: 24px;
 }
 
 .cat-card{
-  background: var(--black);
+  background: var(--panel);
   padding: 0;
   display: flex; flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+.cat-card:hover{
+  border-color: var(--rust-bright);
 }
 
 .cat-media{
   aspect-ratio: 16/10;
-  background: var(--panel);
+  background: var(--panel-2);
   overflow: hidden;
   position: relative;
 }
@@ -276,7 +282,7 @@ a{ color: inherit; text-decoration: none; }
 }
 
 .cat-meta{
-  padding: 26px 4px 40px;
+  padding: 24px 22px 28px;
 }
 .cat-meta h3{
   font-family: var(--serif);
@@ -286,18 +292,28 @@ a{ color: inherit; text-decoration: none; }
 }
 .cat-sub{
   font-size: 13px; color: var(--grey);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 .cat-link{
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 600;
   display: inline-flex; align-items: center; gap: 8px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 3px;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  color: var(--black);
+  background: var(--rust-bright);
+  padding: 12px 20px;
+  border-radius: 3px;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 .cat-link:hover{
-  border-color: var(--rust-bright);
-  color: var(--rust-bright);
+  background: var(--cream);
+  transform: translateY(-1px);
+}
+.cat-link::after{
+  content: '→';
+  transition: transform 0.2s ease;
+}
+.cat-link:hover::after{
+  transform: translateX(3px);
 }
 
 /* ============================================
