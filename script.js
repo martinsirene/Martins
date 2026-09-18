@@ -24,3 +24,18 @@ observer.disconnect();
 }, { threshold: 0.4 });
 observer.observe(bioText);
 }
+
+// Scroll-driven timeline playhead
+const playhead = document.getElementById(‘timelinePlayhead’);
+if (playhead) {
+const updatePlayhead = () => {
+const scrollTop = window.scrollY;
+const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+const trackWidth = playhead.parentElement.offsetWidth;
+playhead.style.transform = `translateX(${progress * trackWidth}px)`;
+};
+window.addEventListener(‘scroll’, updatePlayhead, { passive: true });
+window.addEventListener(‘resize’, updatePlayhead);
+updatePlayhead();
+}
