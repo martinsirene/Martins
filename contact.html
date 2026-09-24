@@ -16,7 +16,13 @@
 <div class="grain"></div>
 
 <header class="site-nav">
-  <a href="index.html" class="nav-mark">BM</a>
+  <div class="nav-left">
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back
+    </a>
+    <a href="index.html" class="nav-mark">BM</a>
+  </div>
   <nav class="nav-links">
     <a href="animation.html">Animation</a>
     <a href="motion-graphics.html">Motion Graphics</a>
@@ -48,6 +54,62 @@
       <dt>Based</dt>
       <dd>Remote, worldwide</dd>
     </div>
+  </div>
+</section>
+
+<section class="inquiry">
+  <div class="inquiry-inner">
+    <h2>Start a project</h2>
+    <p class="inquiry-note">Tell me a bit about what you need, I'll get back to you within a couple of days.</p>
+
+```
+<form class="inquiry-form" action="https://formspree.io/f/xyezjvbk" method="POST">
+  <div class="form-row">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div class="form-row">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="form-row">
+    <label for="service">What do you need?</label>
+    <select id="service" name="service" required>
+      <option value="" disabled selected>Select a service</option>
+      <option value="Brand Campaign">Brand Campaign</option>
+      <option value="Animation">Animation</option>
+      <option value="Motion Graphics">Motion Graphics</option>
+      <option value="Product Videography">Product Videography</option>
+      <option value="Lifestyle Commercial">Lifestyle Commercial</option>
+      <option value="DTC Ad">DTC Ad</option>
+      <option value="Short/Long Form Editing">Short/Long Form Editing</option>
+      <option value="Not sure yet">Not sure yet</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label for="budget">Budget range</label>
+    <select id="budget" name="budget">
+      <option value="" disabled selected>Select a range</option>
+      <option value="Under $300">Under $300</option>
+      <option value="$300-$600">$300-$600</option>
+      <option value="$600-$1500">$600-$1500</option>
+      <option value="$1500+">$1500+</option>
+      <option value="Not sure yet">Not sure yet</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label for="message">Project details</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+
+  <button type="submit" class="btn-solid">Send inquiry</button>
+</form>
+```
+
   </div>
 </section>
 
